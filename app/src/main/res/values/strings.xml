@@ -2,33 +2,34 @@
     <string name="app_name">MoneyBot Virtual Wallet</string>
 
     // general purpose strings
-    <string name="gen_Cancel">Cancel</string>
+    <string name="cancel">Cancel</string>
 
     // navigation strings
-    <string name="navTitle_Move">Move Money</string>
-    <string name="navTitle_Add">Add Money</string>
-    <string name="navTitle_Friends">Friends</string>
-    <string name="decTitle_Welcome">Welcome Back</string>
-    <string name="navTitle_Settings">Settings</string>
-    <string name="navTitle_Pay">NFC Pay</string>
-    <string name="navTitle_Home">Home</string>
+    <string name="welcome_Back">Welcome Back</string>
+    <string name="home">Home</string>
+    <string name="move_Money">Move Money</string>
+    <string name="transfer_Money">Transfer Money</string>
+    <string name="add_Money">Add Money</string>
+    <string name="friends">Friends</string>
+    <string name="moneybot_Friends">Money Bot Friends</string>
+    <string name="settings">Settings</string>
+    <string name="nfc_Pay">NFC Pay</string>
+    <string name="nfc_Payment">NFC Payment</string>
 
     // login strings
-    <string name="logTitle_CreateAcc">Create Account</string>
-    <string name="logTitle_Login">Login</string>
-    <string name="logTitle_AccLogin">Account Login</string>
-    <string name="logHint_User">Username</string>
-    <string name="logHint_Pass">Password</string>>
-    <string name="logHint_Email">Email</string>
-    <string name="logHint_Phone">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="account_Login">Account Login</string>
+    <string name="create_Account">Create Account</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>>
+    <string name="email">Email</string>
+    <string name="phone_Number">Phone Number</string>
 
     // records strings
-    <string name="recTitle_Load">Load More</string>
+    <string name="load_More">Load More</string>
 
-    // decorative strings
-    <string name="decTitle_Add">Add Money</string>
-    <string name="decTitle_Friends">Money Bot Friends</string>
-    <string name="decTitle_Pay">NFC Payment</string>
-    <string name="decTitle_Settings">Settings</string>
-    <string name="decTitle_Move">Transfer Money</string>
+    // bank string
+    <string name="add_Bank">Add Bank</string>
+    <string name="bank_Name">Bank Name</string>
+
 </resources>
