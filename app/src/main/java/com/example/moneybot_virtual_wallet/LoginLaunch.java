@@ -2,15 +2,17 @@ package com.example.moneybot_virtual_wallet;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class LoginControl extends AppCompatActivity implements View.OnClickListener {
+public class LoginLaunch extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        // switch to main screen
+        Intent login = new Intent(this, MainHome.class);
+        startActivity(login);
     }
 
     @Override
