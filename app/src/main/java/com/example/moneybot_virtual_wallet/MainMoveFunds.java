@@ -1,22 +1,22 @@
 package com.example.moneybot_virtual_wallet;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainHome extends AppCompatActivity implements View.OnClickListener {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainMoveFunds extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_home);
+        setContentView(R.layout.main_movefunds);
 
         // create button click listeners
-        Button btnMove = findViewById(R.id.navbtn_MoveMoney);
-        btnMove.setOnClickListener(this);
+        Button btnHome = findViewById(R.id.navbtn_Home);
+        btnHome.setOnClickListener(this);
         Button btnAdd = findViewById(R.id.navbtn_AddMoney);
         btnAdd.setOnClickListener(this);
         Button btnFriends = findViewById(R.id.navbtn_Friends);
@@ -32,10 +32,10 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()){
 
-            // If MoveMoney nav button was clicked, launch page
-            case R.id.navbtn_MoveMoney:
-                Intent move = new Intent(this, MainMoveFunds.class);
-                startActivity(move);
+            // If Home nav button was clicked, launch page
+            case R.id.navbtn_Home:
+                Intent home= new Intent(this, MainHome.class);
+                startActivity(home);
                 break;
 
             // If AddMoney nav button was clicked, launch page
@@ -65,5 +65,6 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
                 break;
         }
     }
+
 
 }
