@@ -1,11 +1,18 @@
 <resources>
-    <string name="app_name">MoneyBot_Virtual_Wallet</string>
+    <string name="app_name">MoneyBot Virtual Wallet</string>
+
+    // general purpose strings
+    <string name="gen_Cancel">Cancel</string>
+
+    // navigation strings
     <string name="navTitle_Move">Move Money</string>
     <string name="navTitle_Add">Add Money</string>
     <string name="navTitle_Friends">Friends</string>
     <string name="decTitle_Welcome">Welcome Back</string>
     <string name="navTitle_Settings">Settings</string>
     <string name="navTitle_Pay">NFC Pay</string>
+
+    // login strings
     <string name="logTitle_CreateAcc">Create Account</string>
     <string name="logTitle_Login">Login</string>
     <string name="logTitle_AccLogin">Account Login</string>
@@ -13,7 +20,11 @@
     <string name="logHint_Pass">Password</string>>
     <string name="logHint_Email">Email</string>
     <string name="logHint_Phone">Phone Number</string>
+
+    // records strings
     <string name="recTitle_Load">Load More</string>
+
+    // decorative strings
     <string name="decTitle_Add">Add Money</string>
     <string name="decTitle_Friends">Money Bot Friends</string>
     <string name="decTitle_Pay">NFC Payment</string>
