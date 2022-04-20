@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MoneyBot_Virtual_Wallet</string>
+    <string name="navTitle_Move">Move Money</string>
+    <string name="navTitle_Add">Add Money</string>
+    <string name="navTitle_Friends">Friends</string>
+    <string name="decTitle_Welcome">Welcome Back</string>
+    <string name="navTitle_Settings">Settings</string>
+    <string name="navTitle_Pay">NFC Pay</string>
+    <string name="recTitle_Load">Load More</string>
+    <string name="decTitle_Add">Add Money</string>
+    <string name="decTitle_Friends">Money Bot Friends</string>
+    <string name="decTitle_Pay">NFC Payment</string>
+    <string name="decTitle_Settings">Settings</string>
+    <string name="decTitle_Move">Transfer Money</string>
+</resources>
