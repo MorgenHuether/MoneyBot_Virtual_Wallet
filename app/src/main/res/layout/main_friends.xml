@@ -7,6 +7,26 @@
     android:background="#08313a"
     tools:context=".MainHome">
 
+    <View
+        android:id="@+id/dec_TitleBck"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="26dp"
+        android:background="#f1f1e6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/dec_NavBck"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginBottom="26dp"
+        android:background="#d37b31"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <Button
         android:id="@+id/navbtn_Home"
         android:layout_width="50dp"
@@ -17,13 +37,13 @@
         android:insetBottom="0dp"
         android:paddingLeft="0dp"
         android:paddingRight="0dp"
+        android:text="@string/navTitle_Home"
         android:textColor="#000000"
         android:textSize="12sp"
         app:cornerRadius="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/dec_TitleBck"
         app:layout_constraintEnd_toEndOf="@+id/dec_TitleBck"
-        app:layout_constraintTop_toTopOf="@+id/dec_TitleBck"
-        tools:text="Home" />
+        app:layout_constraintTop_toTopOf="@+id/dec_TitleBck" />
 
     <Button
         android:id="@+id/navbtn_MoveMoney"
@@ -110,26 +130,6 @@
         app:cornerRadius="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/navbtn_Pay" />
-
-    <View
-        android:id="@+id/dec_NavBck"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginBottom="26dp"
-        android:background="#d37b31"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <View
-        android:id="@+id/dec_TitleBck"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_marginTop="26dp"
-        android:background="#f1f1e6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/dec_Title"
