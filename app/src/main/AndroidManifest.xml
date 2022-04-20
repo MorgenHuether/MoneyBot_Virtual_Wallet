@@ -20,6 +20,12 @@
         </activity>
         <activity android:name=".LoginCreate"></activity>
         <activity android:name=".MainHome"></activity>
+        <activity android:name=".MainMoveFunds"></activity>
+        <activity android:name=".MainAddFunds"></activity>
+        <activity android:name=".MainFriends"></activity>
+        <activity android:name=".MainPay"></activity>
+        <activity android:name=".MainSettings"></activity>
+
 
     </application>
 
