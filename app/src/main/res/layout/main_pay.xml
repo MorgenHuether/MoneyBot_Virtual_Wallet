@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/theme_Teal"
-    tools:context=".MainActivity">
+    tools:context=".MainHome">
 
     <Button
         android:id="@+id/navbtn_Home"
