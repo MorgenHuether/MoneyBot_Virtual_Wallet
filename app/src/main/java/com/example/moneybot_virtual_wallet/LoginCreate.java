@@ -15,7 +15,7 @@ public class LoginCreate extends AppCompatActivity implements View.OnClickListen
         setContentView(R.layout.login_create);
 
         // create button click listeners
-        Button btnCreate = findViewById(R.id.btn_AddBank);
+        Button btnCreate = findViewById(R.id.btn_CreateAcc);
         btnCreate.setOnClickListener(this);
         Button btnCancel = findViewById(R.id.btn_Cancel);
         btnCancel.setOnClickListener(this);
@@ -26,7 +26,7 @@ public class LoginCreate extends AppCompatActivity implements View.OnClickListen
         switch (view.getId()){
 
             // If the create account clicked, check info and return to login page
-            case R.id.btn_AddBank:
+            case R.id.btn_CreateAcc:
                 Intent login = new Intent(this, LoginLaunch.class);
                 startActivity(login);
                 break;

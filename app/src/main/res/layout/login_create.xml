@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_AddBank"
+        android:id="@+id/btn_CreateAcc"
         android:layout_width="150dp"
         android:layout_height="75dp"
         android:layout_marginTop="20dp"

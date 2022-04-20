@@ -17,7 +17,7 @@ public class LoginLaunch extends AppCompatActivity implements View.OnClickListen
         // create button click listeners
         Button btnLogin = findViewById(R.id.btn_Login);
         btnLogin.setOnClickListener(this);
-        Button btnCreate = findViewById(R.id.btn_AddBank);
+        Button btnCreate = findViewById(R.id.btn_CreateAcc);
         btnCreate.setOnClickListener(this);
     }
 
@@ -32,7 +32,7 @@ public class LoginLaunch extends AppCompatActivity implements View.OnClickListen
                 break;
 
             // If the create account button was clicked, launch create page
-            case R.id.btn_AddBank:
+            case R.id.btn_CreateAcc:
                 Intent create = new Intent(this, LoginCreate.class);
                 startActivity(create);
                 break;
