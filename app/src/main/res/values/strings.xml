@@ -9,7 +9,9 @@
     <string name="logTitle_CreateAcc">Create Account</string>
     <string name="logTitle_Login">Login</string>
     <string name="logHint_User">Username</string>
-    <string name="logHint_Pass">Password</string>
+    <string name="logHint_Pass">Password</string>>
+    <string name="logHint_Email">Email</string>
+    <string name="logHint_Phone">Phone Number</string>
     <string name="recTitle_Load">Load More</string>
     <string name="decTitle_Add">Add Money</string>
     <string name="decTitle_Friends">Money Bot Friends</string>
