@@ -31,5 +31,8 @@
     // bank string
     <string name="add_Bank">Add Bank</string>
     <string name="bank_Name">Bank Name</string>
+    <string name="cardholder_Name">Cardholder Name</string>
+    <string name="routing_Number">Routing Number</string>
+    <string name="account_Number">Account Number</string>
 
 </resources>

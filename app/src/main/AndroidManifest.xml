@@ -26,6 +26,7 @@
         <activity android:name=".MainFriends"></activity>
         <activity android:name=".MainPay"></activity>
         <activity android:name=".MainSettings"></activity>
+        <activity android:name=".BankAdd"></activity>
 
 
     </application>
