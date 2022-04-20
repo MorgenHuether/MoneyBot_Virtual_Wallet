@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/theme_Teal"
-    tools:context=".LoginControl">
+    tools:context=".LoginLaunch">
 
     <View
         android:id="@+id/view"
