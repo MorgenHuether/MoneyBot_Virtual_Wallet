@@ -8,6 +8,7 @@
     <string name="navTitle_Pay">NFC Pay</string>
     <string name="logTitle_CreateAcc">Create Account</string>
     <string name="logTitle_Login">Login</string>
+    <string name="logTitle_AccLogin">Account Login</string>
     <string name="logHint_User">Username</string>
     <string name="logHint_Pass">Password</string>>
     <string name="logHint_Email">Email</string>
