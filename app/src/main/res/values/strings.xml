@@ -11,6 +11,7 @@
     <string name="decTitle_Welcome">Welcome Back</string>
     <string name="navTitle_Settings">Settings</string>
     <string name="navTitle_Pay">NFC Pay</string>
+    <string name="navTitle_Home">Home</string>
 
     // login strings
     <string name="logTitle_CreateAcc">Create Account</string>
