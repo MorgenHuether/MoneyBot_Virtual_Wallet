@@ -29,6 +29,10 @@
     // records strings
     <string name="load_More">Load More</string>
 
+    // money strings
+    <string name="amount">Amount</string>
+    <string name="recipient">Recipient</string>
+
     // bank string
     <string name="add_Bank">Add Bank</string>
     <string name="bank_Name">Bank Name</string>
