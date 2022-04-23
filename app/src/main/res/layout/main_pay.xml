@@ -8,6 +8,17 @@
     tools:context=".MainHome">
 
     <View
+        android:id="@+id/dec_Card"
+        android:layout_width="0dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="48dp"
+        android:background="#213C30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dec_TitleBck" />
+
+    <View
         android:id="@+id/dec_NavBck"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -26,6 +37,45 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dec_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nfc_Payment"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dec_TitleBck"
+        app:layout_constraintEnd_toEndOf="@+id/dec_TitleBck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dec_TitleBck" />
+
+    <TextView
+        android:id="@+id/dec_CardNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="CARD NUMBER HERE"
+        android:textAlignment="center"
+        android:textColor="#07A31B"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dec_CardName" />
+
+    <TextView
+        android:id="@+id/dec_CardName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="CARD NAME HERE"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dec_Card" />
 
     <Button
         android:id="@+id/navbtn_Home"
@@ -131,16 +181,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/navbtn_Pay" />
 
-    <TextView
-        android:id="@+id/dec_Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nfc_Payment"
+    <Button
+        android:id="@+id/btn_StartNFC"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/theme_Orange"
+        android:text="@string/start_NFC"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dec_TitleBck"
-        app:layout_constraintEnd_toEndOf="@+id/dec_TitleBck"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dec_TitleBck" />
+        app:layout_constraintTop_toBottomOf="@+id/dec_Card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
