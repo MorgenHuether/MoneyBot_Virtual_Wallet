@@ -61,9 +61,23 @@ public class MainMoveFunds extends AppCompatActivity implements View.OnClickList
                 Intent set = new Intent(this, MainSettings.class);
                 startActivity(set);
                 break;
+
+            // If transfer money button was clicked, execute transfer method
+            case R.id.btn_Transfer:
+                transferFunds();
+                break;
             default:
                 break;
         }
+    }
+
+    // transfers funds from one user to another
+    private void transferFunds(){
+        // Useful variables
+        View recipient = findViewById(R.id.drpdwn_Recipient);
+        View amount = findViewById(R.id.txtbx_Amount);
+
+        //TODO: Finish the Transfer Funds method
     }
 
 

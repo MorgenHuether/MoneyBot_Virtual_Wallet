@@ -61,9 +61,23 @@ public class MainAddFunds extends AppCompatActivity implements View.OnClickListe
                 Intent set = new Intent(this, MainSettings.class);
                 startActivity(set);
                 break;
+
+            // If add money button was clicked, execute method
+            case R.id.btn_AddFunds:
+                addFunds();
+                break;
             default:
                 break;
         }
+    }
+
+
+    // adds funds to the account
+    private void addFunds(){
+        // Helpful variables
+        View from = findViewById(R.id.drpdwn_FromSource);
+        View amount = findViewById(R.id.txtbx_Amount);
+
     }
 
 }

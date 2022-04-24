@@ -8,6 +8,17 @@
     tools:context=".MainHome">
 
     <View
+        android:id="@+id/dec_Card4"
+        android:layout_width="0dp"
+        android:layout_height="225dp"
+        android:layout_marginTop="48dp"
+        android:background="#213C30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dec_TitleBck" />
+
+    <View
         android:id="@+id/dec_NavBck"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -27,6 +38,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dec_CardNum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="CARD NUMBER HERE"
+        android:textAlignment="center"
+        android:textColor="#07A31B"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dec_CardName" />
+
+    <TextView
+        android:id="@+id/dec_CardName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="CARD NAME HERE"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dec_Card4" />
+
+    <TextView
+        android:id="@+id/dec_Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dec_TitleBck"
+        app:layout_constraintEnd_toEndOf="@+id/dec_TitleBck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dec_TitleBck" />
 
     <Button
         android:id="@+id/navbtn_MoveMoney"
@@ -61,6 +112,24 @@
         app:cornerRadius="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/dec_TitleBck"
         app:layout_constraintEnd_toEndOf="@+id/dec_TitleBck"
+        app:layout_constraintTop_toTopOf="@+id/dec_TitleBck" />
+
+    <Button
+        android:id="@+id/navbtn_Logout"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:backgroundTint="#a5cbd7"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:text="@string/logout"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:cornerRadius="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dec_TitleBck"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/dec_TitleBck" />
 
     <Button
@@ -134,16 +203,34 @@
         app:layout_constraintStart_toEndOf="@+id/navbtn_Pay"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
-    <TextView
-        android:id="@+id/dec_Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/dec_TitleBck"
-        app:layout_constraintEnd_toEndOf="@+id/dec_TitleBck"
+    <Button
+        android:id="@+id/btn_EditInfo"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/theme_Orange"
+        android:text="@string/edit_user_info"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/dec_TitleBck" />
+        app:layout_constraintTop_toBottomOf="@+id/dec_Card4" />
+
+    <Button
+        android:id="@+id/btn_AddBank"
+        android:layout_width="216dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/theme_Orange"
+        android:text="@string/add_Bank"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_EditInfo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
