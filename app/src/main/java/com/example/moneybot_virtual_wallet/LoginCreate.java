@@ -67,7 +67,13 @@ public class LoginCreate extends AppCompatActivity implements View.OnClickListen
         });
 
         Button btnCancel = findViewById(R.id.btn_Cancel);
-        btnCancel.setOnClickListener(this);
+//        btnCancel.setOnClickListener(this);
+
+        // If the cancel button clicked, return to login launch with no changes
+        btnCancel.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), LoginLaunch.class);
+            startActivity(intent);
+        });
     }
 
     String hash(String pass) {

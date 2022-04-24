@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class BankAdd extends AppCompatActivity implements View.OnClickListener{
 
+    Bundle extras;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,9 +18,29 @@ public class BankAdd extends AppCompatActivity implements View.OnClickListener{
 
         // create button click listeners
         Button btnAdd = findViewById(R.id.btn_AddBank);
-        btnAdd.setOnClickListener(this);
+//        btnAdd.setOnClickListener(this);
+
+        // If add bank clicked, add to DB and return to home
+        btnAdd.setOnClickListener(view -> {
+            //TODO: add bank information input to DB
+
+
+            Intent intent = new Intent(getApplicationContext(), MainHome.class);
+            if(extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnCancel = findViewById(R.id.btn_Cancel);
-        btnCancel.setOnClickListener(this);
+//        btnCancel.setOnClickListener(this);
+
+        // If the cancel button clicked, return to home with no changes
+        btnCancel.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainHome.class);
+            if(extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
     }
 
     // When clicked...

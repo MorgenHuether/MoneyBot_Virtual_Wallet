@@ -117,7 +117,6 @@
         android:id="@+id/dec_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome_Back"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/dec_TitleBck"

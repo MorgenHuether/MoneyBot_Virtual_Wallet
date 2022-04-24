@@ -9,22 +9,67 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainPay extends AppCompatActivity implements View.OnClickListener {
 
+    Bundle extras;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_pay);
 
+        // Contains username info passed from last activity
+        extras = getIntent().getExtras();
+
         // create button click listeners
         Button btnHome = findViewById(R.id.navbtn_Home);
-        btnHome.setOnClickListener(this);
+//        btnHome.setOnClickListener(this);
+
+        btnHome.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainHome.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnMove = findViewById(R.id.navbtn_MoveMoney);
-        btnMove.setOnClickListener(this);
+//        btnMove.setOnClickListener(this);
+
+        btnMove.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainMoveFunds.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnAdd = findViewById(R.id.navbtn_AddMoney);
-        btnAdd.setOnClickListener(this);
+//        btnAdd.setOnClickListener(this);
+
+        btnAdd.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainAddFunds.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnFriends = findViewById(R.id.navbtn_Friends);
-        btnFriends.setOnClickListener(this);
+//        btnFriends.setOnClickListener(this);
+
+        btnFriends.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainFriends.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnSettings = findViewById(R.id.navbtn_Settings);
-        btnSettings.setOnClickListener(this);
+//        btnSettings.setOnClickListener(this);
+
+        btnSettings.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainSettings.class);
+            if(extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
 
     }
 

@@ -43,6 +43,7 @@ public class LoginLaunch extends AppCompatActivity implements View.OnClickListen
                 // If username and password correct, login and go to home
                 if(DB.checkUsernamePass(user, hashedPass)) {
                     Intent login = new Intent(getApplicationContext(), MainHome.class);
+                    login.putExtra("username", user);
                     startActivity(login);
                 } else {
                     Toast.makeText(LoginLaunch.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
