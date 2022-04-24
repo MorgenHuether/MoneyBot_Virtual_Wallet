@@ -1,35 +1,75 @@
 package com.example.moneybot_virtual_wallet;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainPay extends AppCompatActivity implements View.OnClickListener {
+
+    Bundle extras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_pay);
 
+        // Contains username info passed from last activity
+        extras = getIntent().getExtras();
+
         // create button click listeners
         Button btnHome = findViewById(R.id.navbtn_Home);
-        btnHome.setOnClickListener(this);
+//        btnHome.setOnClickListener(this);
+
+        btnHome.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainHome.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnMove = findViewById(R.id.navbtn_MoveMoney);
-        btnMove.setOnClickListener(this);
+//        btnMove.setOnClickListener(this);
+
+        btnMove.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainMoveFunds.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnAdd = findViewById(R.id.navbtn_AddMoney);
-        btnAdd.setOnClickListener(this);
+//        btnAdd.setOnClickListener(this);
+
+        btnAdd.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainAddFunds.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnFriends = findViewById(R.id.navbtn_Friends);
-        btnFriends.setOnClickListener(this);
+//        btnFriends.setOnClickListener(this);
+
+        btnFriends.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainFriends.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
         Button btnSettings = findViewById(R.id.navbtn_Settings);
-        btnSettings.setOnClickListener(this);
-        Button btnNFCStart = findViewById(R.id.btn_StartNFC);
-        btnNFCStart.setOnClickListener(this);
+//        btnSettings.setOnClickListener(this);
+
+        btnSettings.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), MainSettings.class);
+            if(extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
 
     }
 
@@ -65,13 +105,6 @@ public class MainPay extends AppCompatActivity implements View.OnClickListener {
             case R.id.navbtn_Settings:
                 Intent set = new Intent(this, MainSettings.class);
                 startActivity(set);
-                break;
-
-            // If NFC pay button was clicked, show NFC popup
-            case R.id.btn_StartNFC:
-
-                // TODO: display popup for NFC "nfc_paypopup.xml"
-
                 break;
             default:
                 break;
