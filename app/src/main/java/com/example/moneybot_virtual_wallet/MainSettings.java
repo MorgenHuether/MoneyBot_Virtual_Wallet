@@ -30,10 +30,7 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
             finish();
         });
 
-
         Button btnHome = findViewById(R.id.navbtn_Home);
-//        btnHome.setOnClickListener(this);
-
         btnHome.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), MainHome.class);
             if (extras != null)
@@ -42,8 +39,6 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
         });
 
         Button btnMove = findViewById(R.id.navbtn_MoveMoney);
-//        btnMove.setOnClickListener(this);
-
         btnMove.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), MainMoveFunds.class);
             if (extras != null)
@@ -52,8 +47,6 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
         });
 
         Button btnAdd = findViewById(R.id.navbtn_AddMoney);
-//        btnAdd.setOnClickListener(this);
-
         btnAdd.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), MainAddFunds.class);
             if (extras != null)
@@ -62,8 +55,6 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
         });
 
         Button btnFriends = findViewById(R.id.navbtn_Friends);
-//        btnFriends.setOnClickListener(this);
-
         btnFriends.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), MainFriends.class);
             if (extras != null)
@@ -72,8 +63,6 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
         });
 
         Button btnPay = findViewById(R.id.navbtn_Pay);
-//        btnPay.setOnClickListener(this);
-
         btnPay.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), MainPay.class);
             if (extras != null)
@@ -81,46 +70,27 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         });
 
+        Button btnAddBank = findViewById(R.id.btn_AddBank);
+        btnAddBank.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), BankAdd.class);
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
+
+        //TODO: Update intent "BankAdd.class" to proper class used to launch edit page
+        Button btnEditInfo = findViewById(R.id.btn_EditInfo);
+        btnEditInfo.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), BankAdd.class); // <--- fix here
+            if (extras != null)
+                intent.putExtras(extras);
+            startActivity(intent);
+        });
     }
 
-    // When clicked...
+    // Unused
     public void onClick(View view) {
-        switch (view.getId()){
 
-            // If Home nav button was clicked, launch page
-            case R.id.navbtn_Home:
-                Intent home= new Intent(this, MainHome.class);
-                home.putExtra("username", extras.getString("username"));
-                startActivity(home);
-                break;
-
-            // If MoveMoney nav button was clicked, launch page
-            case R.id.navbtn_MoveMoney:
-                Intent move = new Intent(this, MainMoveFunds.class);
-                startActivity(move);
-                break;
-
-            // If AddMoney nav button was clicked, launch page
-            case R.id.navbtn_AddMoney:
-                Intent add = new Intent(this, MainAddFunds.class);
-                startActivity(add);
-                break;
-
-            // If Friends nav button was clicked, launch page
-            case R.id.navbtn_Friends:
-                Intent fri = new Intent(this, MainFriends.class);
-                startActivity(fri);
-                break;
-
-            // If NFC Pay nav button was clicked, launch page
-            case R.id.navbtn_Pay:
-                Intent pay = new Intent(this, MainPay.class);
-                startActivity(pay);
-                break;
-
-            default:
-                break;
-        }
     }
 
 }
