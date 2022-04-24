@@ -30,6 +30,7 @@
     // records strings
     <string name="load_More">Load More</string>
     <string name="edit_user_info">Edit User Information</string>
+    <string name="update">Update</string>
 
     // money strings
     <string name="amount">Amount</string>
