@@ -180,12 +180,12 @@
         app:layout_constraintStart_toEndOf="@+id/navbtn_Pay" />
 
     <Button
-        android:id="@+id/btn_Transfer"
+        android:id="@+id/btn_AddFunds"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:backgroundTint="#239728"
-        android:text="@string/transfer_Money"
+        android:text="@string/add_Money"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
