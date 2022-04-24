@@ -25,6 +25,8 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
         btnFriends.setOnClickListener(this);
         Button btnPay = findViewById(R.id.navbtn_Pay);
         btnPay.setOnClickListener(this);
+        Button btnLogout = findViewById(R.id.navbtn_Logout);
+        btnLogout.setOnClickListener(this);
 
     }
 
@@ -60,6 +62,12 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
             case R.id.navbtn_Pay:
                 Intent pay = new Intent(this, MainPay.class);
                 startActivity(pay);
+                break;
+
+            // If Logout nav button was clicked, return to login page
+            case R.id.navbtn_Logout:
+                Intent login = new Intent(this, LoginLaunch.class);
+                startActivity(login);
                 break;
 
             default:
