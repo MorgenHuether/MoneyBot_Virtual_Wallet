@@ -25,7 +25,7 @@ public class BankAdd extends AppCompatActivity implements View.OnClickListener{
             //TODO: add bank information input to DB
 
 
-            Intent intent = new Intent(getApplicationContext(), MainHome.class);
+            Intent intent = new Intent(getApplicationContext(), MainSettings.class);
             if(extras != null)
                 intent.putExtras(extras);
             startActivity(intent);
@@ -36,7 +36,7 @@ public class BankAdd extends AppCompatActivity implements View.OnClickListener{
 
         // If the cancel button clicked, return to home with no changes
         btnCancel.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), MainHome.class);
+            Intent intent = new Intent(getApplicationContext(), MainSettings.class);
             if(extras != null)
                 intent.putExtras(extras);
             startActivity(intent);
