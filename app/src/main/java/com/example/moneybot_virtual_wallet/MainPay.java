@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -74,13 +75,14 @@ public class MainPay extends AppCompatActivity implements View.OnClickListener {
         nfcPopup pop = new nfcPopup();
         pop.show(getSupportFragmentManager(), "nfc");
 
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 pop.dismiss();
+                Toast.makeText(MainPay.this, "Payment processed successfully.", Toast.LENGTH_SHORT).show();
             }
         }, 3000);
-
 
 
     }
