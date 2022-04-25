@@ -27,6 +27,7 @@
         <activity android:name=".MainPay"></activity>
         <activity android:name=".MainSettings"></activity>
         <activity android:name=".BankAdd"></activity>
+        <activity android:name=".EditInfo"></activity>
 
 
     </application>

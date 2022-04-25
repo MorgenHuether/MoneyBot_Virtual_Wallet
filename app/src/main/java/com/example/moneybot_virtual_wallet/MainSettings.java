@@ -78,10 +78,9 @@ public class MainSettings extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         });
 
-        //TODO: Update intent "BankAdd.class" to proper class used to launch edit page
         Button btnEditInfo = findViewById(R.id.btn_EditInfo);
         btnEditInfo.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), BankAdd.class); // <--- fix here
+            Intent intent = new Intent(getApplicationContext(), EditInfo.class);
             if (extras != null)
                 intent.putExtras(extras);
             startActivity(intent);
