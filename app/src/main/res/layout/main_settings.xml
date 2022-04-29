@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/dec_CardNum"
+        android:id="@+id/dec_CardDetails"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -51,10 +51,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dec_CardName" />
+        app:layout_constraintTop_toBottomOf="@+id/dec_CardNum" />
 
     <TextView
-        android:id="@+id/dec_CardName"
+        android:id="@+id/dec_CardNum"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
