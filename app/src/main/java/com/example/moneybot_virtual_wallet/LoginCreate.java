@@ -2,18 +2,14 @@ package com.example.moneybot_virtual_wallet;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 
-public class LoginCreate extends AppCompatActivity implements View.OnClickListener{
+public class LoginCreate extends AppCompatActivity{
 
     EditText username, password, email, phone;
     DBHelper DB;
@@ -29,11 +25,10 @@ public class LoginCreate extends AppCompatActivity implements View.OnClickListen
         phone = findViewById(R.id.txtIn_Phone);
         DB = new DBHelper(this);
 
-        // create button click listeners
-        Button btnCreate = findViewById(R.id.btn_CreateAcc);
-        //btnCreate.setOnClickListener(this);
 
-        // onClick without needing switch case
+
+        // If Create Account clicked
+        Button btnCreate = findViewById(R.id.btn_CreateAcc);
         btnCreate.setOnClickListener(view -> {
             String user = username.getText().toString();
             String pass = password.getText().toString();
@@ -66,10 +61,8 @@ public class LoginCreate extends AppCompatActivity implements View.OnClickListen
             }
         });
 
+        // If Cancel clicked
         Button btnCancel = findViewById(R.id.btn_Cancel);
-//        btnCancel.setOnClickListener(this);
-
-        // If the cancel button clicked, return to login launch with no changes
         btnCancel.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), LoginLaunch.class);
             startActivity(intent);
@@ -91,23 +84,4 @@ public class LoginCreate extends AppCompatActivity implements View.OnClickListen
         }
     }
 
-    // When clicked...  -- Note: not used after db implementation
-    public void onClick(View view) {
-        switch (view.getId()){
-
-            // If the create account clicked, check info and return to login page
-            case R.id.btn_CreateAcc:
-                Intent login = new Intent(this, LoginLaunch.class);
-                startActivity(login);
-                break;
-
-            // If the cancel button clicked, return to login launch with no changes
-            case R.id.btn_Cancel:
-                Intent create = new Intent(this, LoginLaunch.class);
-                startActivity(create);
-                break;
-            default:
-                break;
-        }
-    }
 }
