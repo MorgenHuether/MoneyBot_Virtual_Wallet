@@ -3,7 +3,10 @@ package com.example.moneybot_virtual_wallet;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +18,13 @@ public class MainAddFunds extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_addfunds);
+
+        // testing values for the spinner drop-down
+        String[] testBanks = {"Bank of America", "Citi", "Capital One", "Swift Cash Android Bank"};
+        Spinner spin = (Spinner) findViewById(R.id.drpdwn_FromSource);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, testBanks);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(adapter); // init drop down
 
         // Contains username info passed from last activity
         extras = getIntent().getExtras();
@@ -115,12 +125,18 @@ public class MainAddFunds extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+//    @Override
+//    public void onItemSelected(AdapterView<?> arg0, View arg1, int position, long id){
+//
+//    }// end onItemSelected --
 
     // adds funds to the account
     private void addFunds(){
         // Helpful variables
-        View from = findViewById(R.id.drpdwn_FromSource);
-        View amount = findViewById(R.id.txtbx_Amount);
+        View from = findViewById(R.id.drpdwn_FromSource); // drop down selection
+        View amount = findViewById(R.id.txtbx_Amount); // entered amount to add
+
+
 
     }
 

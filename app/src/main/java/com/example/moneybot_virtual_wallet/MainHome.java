@@ -126,4 +126,10 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-}
+    public void updateTransactionCard(){
+
+    }// end updateTransactionCard -- grabs transactions and updates for user on home screen 'card'
+
+
+
+}// end class
