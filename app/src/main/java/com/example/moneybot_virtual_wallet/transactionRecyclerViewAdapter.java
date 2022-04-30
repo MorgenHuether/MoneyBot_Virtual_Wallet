@@ -10,7 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class transactionRecyclerViewAdapter extends RecyclerView.Adapter<transactionRecyclerViewAdapter.MyViewHolder>{
     // class vars
@@ -33,13 +35,16 @@ public class transactionRecyclerViewAdapter extends RecyclerView.Adapter<transac
 
     @Override
     public void onBindViewHolder(@NonNull transactionRecyclerViewAdapter.MyViewHolder holder, int position) {
+        Locale locale = Locale.US;
+        NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
+        String currencyText = fmt.format(transactionModels.get(position).getTransactionPrice());
+        holder.transactionPrice.setText(currencyText);
         holder.transactionItem.setText(transactionModels.get(position).getTransactionLineItem());
-        holder.transactionPrice.setText(transactionModels.get(position).getTransactionPrice());
     }// binding process -- assign values to rows depending on position of view
 
     @Override
     public int getItemCount() {
-        return 3; // adjust size if needed
+        return 5; // adjust size if needed
     }// # of items you want displayed -- helps binding process
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

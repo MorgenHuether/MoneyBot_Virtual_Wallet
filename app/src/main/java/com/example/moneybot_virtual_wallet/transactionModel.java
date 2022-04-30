@@ -2,14 +2,14 @@ package com.example.moneybot_virtual_wallet;
 
 public class transactionModel {
     String transactionLineItem;
-    int transactionPrice;
-    int currentBalance;
+    double transactionPrice;
+    double currentBalance;
     boolean isBalanceNegative; // for checking if currentBalance - transactionPrice > 0
     boolean isDepositTransaction; // for checking if transactionPrice is a deposit into account
     int image; // for icons to prettify the code
 
-    public transactionModel(String transactionLineItem, int transactionPrice,
-                            int currentBalance, boolean isBalanceNegative, boolean isDepositTransaction,
+    public transactionModel(String transactionLineItem, double transactionPrice,
+                            double currentBalance, boolean isBalanceNegative, boolean isDepositTransaction,
                             int image) {
         this.transactionLineItem = transactionLineItem;
         this.transactionPrice = transactionPrice;
@@ -23,11 +23,11 @@ public class transactionModel {
         return transactionLineItem;
     }
 
-    public int getTransactionPrice() {
+    public double getTransactionPrice() {
         return transactionPrice;
     }
 
-    public int getCurrentBalance() {
+    public double getCurrentBalance() {
         return currentBalance;
     }
 

@@ -26,7 +26,7 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
 
     // testing
     String[] test_home_items = {"McDonald's #1234", "Sonic #3300", "Bill Pay ACH", "Netflix", "Murphy's Gas Station", "Cinemark #4522", "Taco Bell #1110", "Shoe Dept #449", "Capital One Autopay", "Bank Deposit"};
-    String[] test_home_prices = {"12.23","7.56","98.12","22.56","45.12","34.12","12.56","89.34","223.00","-908.12"};
+    double[] test_home_prices = {12.23,7.56,98.12,22.56,45.12,34.12,12.56,89.34,223.00,-908.12};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,28 +150,26 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
 
     private void setUpTransactionModel(){
         String[] transactionList = test_home_items;
-        String[] transactionPrices = test_home_prices;
-
-        // init values
-        int balance = 0; // change this to query the current user's balance from db
-        boolean isBalNegative = false;
-        boolean isDeposit = false;
-        int image = 0;
-
+        double[] transactionPrices = test_home_prices;
 
         for(int i = 0; i < transactionList.length - 1; i++){ // 0->9 = 10
+            // init values
+            double balance = 0; // change this to query the current user's balance from db
+            boolean isBalNegative = false;
+            boolean isDeposit = false;
+            int image = 0;
+
             // check and set for transaction item creation and pop
-            int thisTransaction = Integer.parseInt(transactionPrices[i]);
-            if(balance - thisTransaction < 0){
+            if(balance - transactionPrices[i] < 0){
                 isBalNegative = true; // set neg flag
             }// check balance -/+
-            if(thisTransaction < 0){
+            if(transactionPrices[i] < 0){
                 isDeposit = true;
             }// flag deposit
 
-            balance = balance - thisTransaction; // update balance
+            balance = balance - transactionPrices[i]; // update balance
             transactionModels.add(new transactionModel(transactionList[i],
-                    thisTransaction, balance, isBalNegative, isDeposit, image));
+                    transactionPrices[i], balance, isBalNegative, isDeposit, image));
         }// traverse list to populate home list
 
     }// end setUpTransactionModel
