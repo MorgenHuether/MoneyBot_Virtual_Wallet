@@ -7,6 +7,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.security.NoSuchAlgorithmException;
+
 public class EditInfo extends AppCompatActivity {
 
     Bundle extras;
@@ -50,7 +52,16 @@ public class EditInfo extends AppCompatActivity {
             String newEmail = emailBox.getText().toString();
             String newPhone = phoneBox.getText().toString();
 
-
+            if (newPass.equals("")){
+                DB.updateUserNotPass(user, DB.getUserInfo(user)[1], newEmail, newPhone);
+            }
+            else{
+                try {
+                    DB.updateUserAndPassword(user, newPass, newEmail, newPhone);
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
+            }
             //TODO: Insert update info DB code
 
 
