@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -44,6 +47,39 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // If insertion succeeds
         return result != -1;
+    }
+
+    public void updateUserNotPass(String username, String password, String email, String phone) {
+        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("username", username);
+        contentValues.put("password", password);
+        contentValues.put("email", email);
+        contentValues.put("phone", phone);
+
+        sqlDB.update("users", contentValues, "username = ?", new String[] {username});
+    }
+
+    public void updateUserAndPassword(String username, String password, String email, String phone) throws NoSuchAlgorithmException {
+        SQLiteDatabase sqlDB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        String pass = username + password;
+
+        MessageDigest md = MessageDigest.getInstance("SHA-512");
+        md.update(pass.getBytes());
+        byte[] arr = md.digest();
+        StringBuilder sb = new StringBuilder();
+        for(byte b: arr)
+            sb.append(Integer.toHexString(b & 0xFF));
+
+        String hashed_pass = sb.toString();
+
+        contentValues.put("username", username);
+        contentValues.put("password", hashed_pass);
+        contentValues.put("email", email);
+        contentValues.put("phone", phone);
+        sqlDB.update("users", contentValues, "username = ?", new String[] {username});
     }
 
     public boolean checkUsername(String username) {
