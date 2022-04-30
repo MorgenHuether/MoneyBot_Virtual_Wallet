@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainSettings extends AppCompatActivity{
 
     Bundle extras;
+    DBHelper DB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,26 +19,28 @@ public class MainSettings extends AppCompatActivity{
 
         // Contains username info passed from last activity
         extras = getIntent().getExtras();
+        String user = extras.getString("username");
+        DB = new DBHelper(this);
 
-        //TODO: update card number and info card
+        //TODO: Display card number and info (the commented stuff)
+
+        // Print card number in standard format
         TextView cardNumBox = findViewById(R.id.dec_CardNum);
-        String cardNum = "1111222233334444";            // GET CARD NUM FROM DB
-        String formNum = cardNum.substring(0,4) + "-" + cardNum.substring(4,8) + "-" + cardNum.substring(8,12) + "-" + cardNum.substring(12);
-        cardNumBox.setText(formNum);
-
+        //String cardNum = DB.getCard(user).getCardNumber();
+        //String formNum = cardNum.substring(0,4) + "-" + cardNum.substring(4,8) + "-" + cardNum.substring(8,12) + "-" + cardNum.substring(12);
+        //cardNumBox.setText(formNum);
+        // Print card CVV and Exp in standard format
         TextView cardDetBox = findViewById(R.id.dec_CardDetails);
-        String cardExp = "1122";                        // GET CARD EXPR FROM DB
-        String formExp = cardExp.substring(0,2) + "/" + cardExp.substring(2);
-        String cardCCV = "123";                         // GET CARD CCV FROM DB
-        String formDet = "Expr: " + formExp + "          CCV: " + cardCCV;
-        cardDetBox.setText(formDet);
+        //String cardExp = DB.getCard(user).getExpiration();
+        //String cardCCV = DB.getCard(user).getCvv();
+        //String formDet = "Expr: " + cardExp + "      CCV: " + cardCCV;
+        //cardDetBox.setText(formDet);
 
 
         // If logout clicked
         Button btnLogout = findViewById(R.id.navbtn_Logout);
         btnLogout.setOnClickListener(view -> {
             Intent intent = new Intent(getApplicationContext(), LoginLaunch.class);
-            // TODO: make sure this is correct way of logging out
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();
