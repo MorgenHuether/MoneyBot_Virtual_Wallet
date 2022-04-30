@@ -4,7 +4,7 @@ public class Card {
 
     private String cardNumber, expiration, cvv, username;
 
-    public Card(String cardNumber, String expiration, String cvv, String username) {
+    public Card(String username, String cardNumber, String expiration, String cvv) {
         this.cardNumber = cardNumber;
         this.expiration = expiration;
         this.cvv = cvv;
@@ -17,7 +17,7 @@ public class Card {
     public String getUsername() { return this.cvv; }
 
     public String[] getCardInfo() {
-        return new String[]{this.cardNumber, this.cvv, this.expiration, this.username};
+        return new String[]{this.username, this.cardNumber,this.cvv, this.expiration};
     }
 
 }

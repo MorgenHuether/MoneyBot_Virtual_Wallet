@@ -21,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqlDB) {
         sqlDB.execSQL("create Table users(username TEXT primary key, password TEXT, email TEXT unique, phone TEXT)");
-        sqlDB.execSQL("create Table cards(cardnum TEXT primary key, expiration TEXT, cvv TEXT, username TEXT)");
+        sqlDB.execSQL("create Table cards(username TEXT primary key, cardnum TEXT, expiration TEXT, cvv TEXT)");
         sqlDB.execSQL("create Table banks(account TEXT primary key, routing TEXT, bankname TEXT, cardholder TEXT)");
         sqlDB.execSQL("create Table user_bank_accounts(account TEXT primary key ,username TEXT)");
     }
@@ -115,22 +115,22 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // CARDS TABLE METHODS
-    public boolean insertCardData(String card, String expiration, String cvv, String username) {
+    public boolean insertCardData(String username, String card, String expiration, String cvv) {
         SQLiteDatabase sqlDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
+        contentValues.put("username", username);
         contentValues.put("card", card);
         contentValues.put("expiration", expiration);
         contentValues.put("cvv", cvv);
-        contentValues.put("username", username);
         long result = sqlDB.insert("cards", null, contentValues);
 
         // If insertion succeeds    -- If it does not then generate new random card number
         return result != -1;
     }
 
-    protected Card getCard(String card) {
+    protected Card getCard(String username) {
         SQLiteDatabase sqlDB = this.getWritableDatabase();
-        Cursor cursor = sqlDB.rawQuery("Select * from cards where card = ?", new String[] {card});
+        Cursor cursor = sqlDB.rawQuery("Select * from cards where username = ?", new String[] {username});
         if(cursor != null)
             cursor.moveToFirst();
 
