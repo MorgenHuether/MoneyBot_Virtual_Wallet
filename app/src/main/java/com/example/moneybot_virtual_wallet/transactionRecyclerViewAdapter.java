@@ -44,7 +44,19 @@ public class transactionRecyclerViewAdapter extends RecyclerView.Adapter<transac
 
     @Override
     public int getItemCount() {
-        return 5; // adjust size if needed
+        int size = 0;
+        if(transactionModels.size() < 10){
+            size = transactionModels.size();
+        }// if the size of the transactionModel list is less than 10, just display it all
+        else{
+            if(transactionModels.size()/3 < 5) { // transactionModels.size() <= 15 BUT >10
+                size = transactionModels.size() / 2; // increase the # displayed to > 5
+            }
+            else{
+                size = transactionModels.size()/3;
+            }
+        }
+        return size; // display appropriate size view
     }// # of items you want displayed -- helps binding process
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{

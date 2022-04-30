@@ -145,6 +145,7 @@
         android:backgroundTint="@color/theme_Orange"
         android:text="@string/load_More"
         android:textColor="@color/black"
+        android:onClick="updateTransactionCard"
         app:layout_constraintBottom_toBottomOf="@+id/dec_RecBck"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

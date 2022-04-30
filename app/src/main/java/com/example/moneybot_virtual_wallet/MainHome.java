@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -24,9 +27,12 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
     // model for transactions
     ArrayList<transactionModel> transactionModels = new ArrayList<>();
 
-    // testing
+    // testing data
     String[] test_home_items = {"McDonald's #1234", "Sonic #3300", "Bill Pay ACH", "Netflix", "Murphy's Gas Station", "Cinemark #4522", "Taco Bell #1110", "Shoe Dept #449", "Capital One Autopay", "Bank Deposit"};
     double[] test_home_prices = {12.23,7.56,98.12,22.56,45.12,34.12,12.56,89.34,223.00,-908.12};
+
+    // adapter getItemCount
+    int size = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +45,7 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
         transactionRecyclerViewAdapter adapter = new transactionRecyclerViewAdapter(this, transactionModels);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        size = adapter.getItemCount();
 
         // Contains username info passed from last activity
         extras = getIntent().getExtras();
@@ -144,7 +151,16 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-    public void updateTransactionCard(){
+    public void updateTransactionCard(View view){
+        // grabbed size of the recycler view to start next index and ending index
+        int startingIndex = size;
+        int endingIndex = size * 2;
+
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_LONG;
+        Toast toast = Toast.makeText(context, "Load more clicked!", duration );
+        toast.show();
+        // insert functionality for user clicking 'load more'
 
     }// end updateTransactionCard -- grabs transactions and updates for user on home screen 'card' when 'load more' is pressed
 

@@ -166,4 +166,13 @@
         app:layout_constraintEnd_toEndOf="@+id/dec_Details"
         app:layout_constraintStart_toStartOf="@+id/dec_Details" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/friends_list_recycler"
+        android:layout_width="291dp"
+        android:layout_height="188dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txt_FriendsList"
+        app:layout_constraintEnd_toEndOf="@+id/txt_FriendsList"
+        app:layout_constraintStart_toStartOf="@+id/txt_FriendsList"
+        app:layout_constraintTop_toTopOf="@+id/txt_FriendsList" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@ public class MainMoveFunds extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.main_movefunds);
 
         // testing values for the spinner drop-down
-        String[] testFriends = {"Leeann W", "Morgan H", "Ian S", "Ann Droid"};
+        String[] testFriends = {"Leeann W", "Morgan H", "Ian S", "Ann Droid","Ruby R", "Rust R", "Pearl O", "Swift X"};
         Spinner spin = (Spinner) findViewById(R.id.drpdwn_Recipient);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, testFriends);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
