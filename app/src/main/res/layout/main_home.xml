@@ -149,4 +149,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/transaction_list"
+        android:layout_width="381dp"
+        android:layout_height="180dp"
+        app:layout_constraintBottom_toTopOf="@+id/recbtn_LoadMore"
+        app:layout_constraintEnd_toEndOf="@+id/dec_RecBck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dec_RecBck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

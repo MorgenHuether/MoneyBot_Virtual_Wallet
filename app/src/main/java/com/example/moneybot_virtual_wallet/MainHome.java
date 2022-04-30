@@ -1,6 +1,8 @@
 package com.example.moneybot_virtual_wallet;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,14 +15,30 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainHome extends AppCompatActivity implements View.OnClickListener {
 
     Bundle extras;
+
+    // model for transactions
+    ArrayList<transactionModel> transactionModels = new ArrayList<>();
+
+    // testing
+    String[] test_home_items = {"McDonald's #1234", "Sonic #3300", "Bill Pay ACH", "Netflix", "Murphy's Gas Station", "Cinemark #4522", "Taco Bell #1110", "Shoe Dept #449", "Capital One Autopay", "Bank Deposit"};
+    double[] test_home_prices = {12.23,7.56,98.12,22.56,45.12,34.12,12.56,89.34,223.00,-908.12};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_home);
+
+        // populate card view on home transaction list
+        RecyclerView recyclerView = findViewById(R.id.transaction_list);
+        setUpTransactionModel();
+        transactionRecyclerViewAdapter adapter = new transactionRecyclerViewAdapter(this, transactionModels);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Contains username info passed from last activity
         extras = getIntent().getExtras();
@@ -126,4 +144,34 @@ public class MainHome extends AppCompatActivity implements View.OnClickListener 
         }
     }
 
-}
+    public void updateTransactionCard(){
+
+    }// end updateTransactionCard -- grabs transactions and updates for user on home screen 'card' when 'load more' is pressed
+
+    private void setUpTransactionModel(){
+        String[] transactionList = test_home_items;
+        double[] transactionPrices = test_home_prices;
+
+        for(int i = 0; i < transactionList.length - 1; i++){ // 0->9 = 10
+            // init values
+            double balance = 0; // change this to query the current user's balance from db
+            boolean isBalNegative = false;
+            boolean isDeposit = false;
+            int image = 0;
+
+            // check and set for transaction item creation and pop
+            if(balance - transactionPrices[i] < 0){
+                isBalNegative = true; // set neg flag
+            }// check balance -/+
+            if(transactionPrices[i] < 0){
+                isDeposit = true;
+            }// flag deposit
+
+            balance = balance - transactionPrices[i]; // update balance
+            transactionModels.add(new transactionModel(transactionList[i],
+                    transactionPrices[i], balance, isBalNegative, isDeposit, image));
+        }// traverse list to populate home list
+
+    }// end setUpTransactionModel
+
+}// end class

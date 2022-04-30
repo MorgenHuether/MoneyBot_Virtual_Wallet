@@ -2,8 +2,14 @@ package com.example.moneybot_virtual_wallet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +21,13 @@ public class MainMoveFunds extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_movefunds);
+
+        // testing values for the spinner drop-down
+        String[] testFriends = {"Leeann W", "Morgan H", "Ian S", "Ann Droid"};
+        Spinner spin = (Spinner) findViewById(R.id.drpdwn_Recipient);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, testFriends);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(adapter); // init drop down
 
         // Contains username info passed from last activity
         extras = getIntent().getExtras();
@@ -122,6 +135,8 @@ public class MainMoveFunds extends AppCompatActivity implements View.OnClickList
         View amount = findViewById(R.id.txtbx_Amount);
 
         //TODO: Finish the Transfer Funds method
+
+
     }
 
 
