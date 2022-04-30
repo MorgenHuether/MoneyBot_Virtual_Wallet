@@ -42,4 +42,28 @@ public class transactionModel {
     public int getImage() {
         return image;
     }
+
+    public void setTransactionLineItem(String transactionLineItem) {
+        this.transactionLineItem = transactionLineItem;
+    }
+
+    public void setTransactionPrice(int transactionPrice) {
+        this.transactionPrice = transactionPrice;
+    }
+
+    public void setCurrentBalance(int currentBalance) {
+        this.currentBalance = currentBalance;
+    }
+
+    public void setBalanceNegative(boolean balanceNegative) {
+        isBalanceNegative = balanceNegative;
+    }
+
+    public void setDepositTransaction(boolean depositTransaction) {
+        isDepositTransaction = depositTransaction;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
 }// end transactionModel

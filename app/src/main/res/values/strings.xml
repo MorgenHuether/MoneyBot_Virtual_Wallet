@@ -45,34 +45,4 @@
     <string name="routing_Number">Routing Number</string>
     <string name="account_Number">Account Number</string>
 
-    // test data for recycler view on home screen
-    // 10 items total for scrolling testing
-    <string-array name="test_home_items">
-        <item>McDonald's #1234</item>
-        <item>Sonic #3300</item>
-        <item>Bill Pay ACH</item>
-        <item>Netflix</item>
-        <item>Murphy's Gas Station</item>
-        <item>Cinemark #4522</item>
-        <item>Taco Bell #1110</item>
-        <item>Shoe Dept #449</item>
-        <item>Capital One Autopay</item>
-        <item>Bank Deposit</item>
-    </string-array>
-
-    // corresponding prices for above items
-
-    <string-array name="test_home_prices">
-        <item>12.23</item>
-        <item>7.56</item>
-        <item>98.12</item>
-        <item>22.56</item>
-        <item>45.12</item>
-        <item>34.12</item>
-        <item>12.56</item>
-        <item>89.34</item>
-        <item>223.00</item>
-        <item>-908.12</item> // use - to indicate cash inflow
-    </string-array>>
-
 </resources>
