@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Random;
 
 public class LoginCreate extends AppCompatActivity{
 
@@ -35,6 +36,15 @@ public class LoginCreate extends AppCompatActivity{
             String eml = email.getText().toString();
             String pho = phone.getText().toString();
 
+            //Generate virtual card details
+            Random rng = new Random();
+            int cardNumA = rng.nextInt(100000000);
+            int cardNumB = rng.nextInt(100000000);
+            String cardNum = String.valueOf(cardNumA) + String.valueOf(cardNumB);
+            String cvv = String.valueOf(rng.nextInt(1000));
+            String expiration = "12/24";
+
+
             // If field left blank
             if(user.equals("")||pass.equals("")||eml.equals("")||pho.equals(""))
                 Toast.makeText(LoginCreate.this, "Missing required information", Toast.LENGTH_SHORT).show();
@@ -45,6 +55,7 @@ public class LoginCreate extends AppCompatActivity{
                 // If database does not already contain username and email, store new user data
                 if(!DB.checkUsername(user) && !DB.checkEmail(eml))
                     if (DB.insertData(user, hashedPass, eml, pho)) {
+                        DB.insertCardData(user, cardNum, expiration, cvv);
                         Toast.makeText(LoginCreate.this, "Account creation successful", Toast.LENGTH_SHORT).show();
                         Intent login = new Intent(getApplicationContext(), LoginLaunch.class);
                         startActivity(login);
