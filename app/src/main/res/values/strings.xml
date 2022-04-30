@@ -61,7 +61,8 @@
     </string-array>
 
     // corresponding prices for above items
-    <int-array name="test_home_items_prices">
+
+    <string-array name="test_home_prices">
         <item>12.23</item>
         <item>7.56</item>
         <item>98.12</item>
@@ -72,6 +73,6 @@
         <item>89.34</item>
         <item>223.00</item>
         <item>-908.12</item> // use - to indicate cash inflow
-    </int-array>
+    </string-array>>
 
 </resources>
